@@ -230,3 +230,21 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .btn::before{content:"";position:absolute;inset:-8px -3px}
 }
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* The opening frame is prepared before the stylesheet loads. The foreground
+   returns to the authored styles when the single entrance sequence ends. */
+@media (prefers-reduced-motion: no-preference){
+  .intro-pending .brand,
+  .intro-pending .links li,
+  .intro-pending .menu-btn{opacity:0;transform:translateY(-6px)}
+  .intro-pending .copy h1 span{opacity:0;clip-path:inset(0 0 100% 0);transform:translateY(12px)}
+  .intro-pending .copy p{opacity:0;transform:translateY(8px)}
+  .intro-pending .ctas .btn{opacity:0;transform:translateY(8px)}
+  .intro-pending .eq{opacity:0}
+  .intro-pending .person{opacity:0;transform:translateY(14px)}
+  .intro-pending .card{opacity:0;transform:translateY(10px)}
+}
+@media (max-width:549.98px) and (prefers-reduced-motion: no-preference){
+  .intro-pending .copy h1{opacity:0;clip-path:inset(0 0 100% 0);transform:translateY(10px)}
+  .intro-pending .copy h1 span{opacity:1;clip-path:none;transform:none}
+}
